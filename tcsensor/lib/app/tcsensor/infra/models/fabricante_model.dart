@@ -1,10 +1,11 @@
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tcsensor/app/tcsensor/domain/entities/fabricante.dart';
 
 class FabricanteModel implements Fabricante {
   @override
-  final int codFabricante;
+  final String codFabricante;
 
   @override
   final String nome;
@@ -31,4 +32,8 @@ class FabricanteModel implements Fabricante {
 
   factory FabricanteModel.fromJson(String source) =>
       FabricanteModel.fromMap(json.decode(source));
+
+  factory FabricanteModel.fromFireStore(QueryDocumentSnapshot<Object?> doc) {
+    return FabricanteModel(codFabricante: doc.id, nome: doc.get('nome'));
+  }
 }

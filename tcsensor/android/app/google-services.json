@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "76757530659",
+    "project_id": "tcsensor-69dae",
+    "storage_bucket": "tcsensor-69dae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76757530659:android:b60469b38c45bb33ee5996",
+        "android_client_info": {
+          "package_name": "com.example.tcsensor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76757530659-1l4gfld86va5djs2d9p5qlnlnnhi8rrt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3vYLwKyxyKdeXwmqL2PF1ibJFSCVpQKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "76757530659-1l4gfld86va5djs2d9p5qlnlnnhi8rrt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "76757530659-5p01v3l9pliotfnmim5ns6d4tk9po5f2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tcsensor.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

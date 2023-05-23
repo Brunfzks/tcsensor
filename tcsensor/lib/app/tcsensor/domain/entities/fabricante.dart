@@ -1,6 +1,6 @@
 class Fabricante {
   final String nome;
-  final int codFabricante;
+  final String codFabricante;
   Fabricante({
     required this.nome,
     required this.codFabricante,

@@ -7,3 +7,13 @@ class FabricanteException implements Exception {
   @override
   String toString() => 'FabricanteException(message: $message)';
 }
+
+class SqlLiteException implements Exception {
+  final String message;
+  SqlLiteException({
+    required this.message,
+  });
+
+  @override
+  String toString() => 'SqlLiteException(message: $message)';
+}

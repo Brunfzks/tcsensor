@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>76757530659-5p01v3l9pliotfnmim5ns6d4tk9po5f2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.76757530659-5p01v3l9pliotfnmim5ns6d4tk9po5f2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBc9s4y70RhyTMOqTODfY8KtlSEIotPjwo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>76757530659</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.tcsensor.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>tcsensor-69dae</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tcsensor-69dae.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:76757530659:ios:c36c8cadac7fe617ee5996</string>
+</dict>
+</plist>
