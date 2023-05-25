@@ -17,3 +17,13 @@ class SqlLiteException implements Exception {
   @override
   String toString() => 'SqlLiteException(message: $message)';
 }
+
+class SysParamException implements Exception {
+  final String message;
+  SysParamException({
+    required this.message,
+  });
+
+  @override
+  String toString() => 'SysParamException(message: $message)';
+}

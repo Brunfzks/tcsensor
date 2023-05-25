@@ -3,7 +3,8 @@ import 'package:tcsensor/app/tcsensor/domain/errors/erros.dart';
 
 import 'package:tcsensor/app/tcsensor/infra/datasource/fabricante_datasource.dart';
 import 'package:tcsensor/app/tcsensor/infra/models/fabricante_model.dart';
-import 'package:tcsensor/app/tcsensor/usescases/get_fabricantes.dart';
+import 'package:tcsensor/app/tcsensor/usescases/fabricantes/get_fabricantes_firebase.dart';
+import 'package:tcsensor/app/tcsensor/usescases/fabricantes/save_fabricantes_sqllite.dart';
 
 class FabricanteFireStore implements FabricanteDataSource {
   FirebaseFirestore db;
@@ -28,5 +29,8 @@ class FabricanteFireStore implements FabricanteDataSource {
   }
 
   @override
-  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+  Future<bool> saveFabricantes(ParamsSaveFabricantes params) {
+    // TODO: implement saveFabricantes
+    throw UnimplementedError();
+  }
 }

@@ -5,12 +5,12 @@ import 'package:kiwi/kiwi.dart';
 import 'package:sqflite/sqlite_api.dart';
 import 'package:tcsensor/app/tcsensor/domain/errors/erros.dart';
 import 'package:tcsensor/app/tcsensor/external/firebase/fabricante_firestore_impl.dart';
-import 'package:tcsensor/app/tcsensor/external/firebase/fabricante_sqllite_impl.dart';
+import 'package:tcsensor/app/tcsensor/external/sql/fabricante_sqllite_impl.dart';
 import 'package:tcsensor/app/tcsensor/infra/models/fabricante_model.dart';
-import 'package:equatable/equatable.dart';
 import 'package:tcsensor/app/tcsensor/infra/repositories/fabricante_repository_impl.dart';
-import 'package:tcsensor/app/tcsensor/usescases/get_fabricantes.dart';
-import 'package:tcsensor/app/tcsensor/usescases/save_fabricantes.dart';
+import 'package:tcsensor/app/tcsensor/usescases/fabricantes/get_fabricantes_firebase.dart';
+import 'package:tcsensor/app/tcsensor/usescases/fabricantes/get_fabricantes_sqlite.dart';
+import 'package:tcsensor/app/tcsensor/usescases/fabricantes/save_fabricantes_sqllite.dart';
 
 part 'get_fabricantes_state.dart';
 
@@ -66,6 +66,33 @@ class GetFabricantesCubit extends Cubit<FabricantesGetState> {
         (bool flag) => {
               emit(
                 state.copyWith(
+                  status: FabricantesStatus.completed,
+                ),
+              ),
+            });
+  }
+
+  void getFabricantesSqlLite() async {
+    emit(state.copyWith(status: FabricantesStatus.loading));
+    final result = await GetFrabicantesSqlLIte(
+            repository: FabricanteRepositoryImpl(
+                datasource:
+                    FabricanteSqlLite(database: container.resolve<Database>())))
+        .call(ParamsGetFabricantes());
+
+    result.fold(
+        (FabricanteException exception) => {
+              emit(
+                state.copyWith(
+                  status: FabricantesStatus.error,
+                  error: exception.message,
+                ),
+              ),
+            },
+        (List<FabricanteModel> fabricantes) => {
+              emit(
+                state.copyWith(
+                  fabricantes: fabricantes,
                   status: FabricantesStatus.completed,
                 ),
               ),

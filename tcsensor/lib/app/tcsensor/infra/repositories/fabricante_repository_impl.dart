@@ -3,8 +3,8 @@ import 'package:tcsensor/app/tcsensor/domain/errors/erros.dart';
 import 'package:tcsensor/app/tcsensor/domain/repository/fabricante_repository.dart';
 import 'package:tcsensor/app/tcsensor/infra/datasource/fabricante_datasource.dart';
 import 'package:tcsensor/app/tcsensor/infra/models/fabricante_model.dart';
-import 'package:tcsensor/app/tcsensor/usescases/get_fabricantes.dart';
-import 'package:tcsensor/app/tcsensor/usescases/save_fabricantes.dart';
+import 'package:tcsensor/app/tcsensor/usescases/fabricantes/get_fabricantes_firebase.dart';
+import 'package:tcsensor/app/tcsensor/usescases/fabricantes/save_fabricantes_sqllite.dart';
 
 class FabricanteRepositoryImpl implements FabricanteRepository {
   final FabricanteDataSource datasource;

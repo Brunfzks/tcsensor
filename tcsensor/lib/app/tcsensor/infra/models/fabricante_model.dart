@@ -23,7 +23,7 @@ class FabricanteModel implements Fabricante {
 
   factory FabricanteModel.fromMap(Map<String, dynamic> map) {
     return FabricanteModel(
-      codFabricante: map['codFabricante']?.toInt() ?? 0,
+      codFabricante: map['codFabricante'] ?? '',
       nome: map['nome'] ?? '',
     );
   }

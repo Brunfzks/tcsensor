@@ -24,6 +24,7 @@ class InitiDataBase implements IGetFrabicantes {
         // When creating the db, create the table
         await db.execute(
             'CREATE TABLE fornecedores (id TEXT PRIMARY KEY, nome TEXT)');
+        await db.execute('CREATE TABLE sysparam (kernel TEXT)');
       }));
     } else {
       try {
@@ -33,6 +34,7 @@ class InitiDataBase implements IGetFrabicantes {
           // When creating the db, create the table
           await db.execute(
               'CREATE TABLE fornecedores (id TEXT PRIMARY KEY, nome TEXT)');
+          await db.execute('CREATE TABLE sysparam (kernel TEXT)');
         }));
       } catch (e) {
         throw Left(SqlLiteException(message: e.toString()));

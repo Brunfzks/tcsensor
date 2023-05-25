@@ -55,7 +55,7 @@ class FabricantesPage extends StatelessWidget {
                       Expanded(child: FloatingActionButton(onPressed: () {
                         context
                             .read<GetFabricantesCubit>()
-                            .saveFabricantesSqlLite();
+                            .getFabricantesSqlLite();
                       })),
                     ],
                   ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kiwi/kiwi.dart';
+import 'package:sqflite/sqflite.dart';
 import 'package:tcsensor/app/tcsensor/presenter/cubits/fabricantes_get_cubit/get_fabricantes_cubit.dart';
 import 'package:tcsensor/app/tcsensor/presenter/fabricantes_list_page.dart';
 import 'package:tcsensor/app/tcsensor/usescases/initi_database.dart';
@@ -14,14 +15,13 @@ void main() async {
   );
 
   KiwiContainer container = KiwiContainer();
-  container.registerInstance(
-    InitiDataBase().call().then(
-          (result) => result.fold(
-            (l) => null,
-            (r) => r,
-          ),
-        ),
-  );
+
+  await InitiDataBase().call().then((result) {
+    result.fold(
+      (l) => null,
+      (r) => container.registerInstance<Database>(r),
+    );
+  });
 
   runApp(const MyApp());
 }
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<GetFabricantesCubit>(
-          create: (context) => GetFabricantesCubit()..getFabricantes(),
+          create: (context) => GetFabricantesCubit()..getFabricantesSqlLite(),
         ),
       ],
       child: MaterialApp(
